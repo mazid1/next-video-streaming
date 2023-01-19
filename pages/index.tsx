@@ -4,7 +4,11 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+type HomeProps = {
+  fileNames: string[];
+};
+
+export default function Home({ fileNames }: HomeProps) {
   return (
     <>
       <Head>
@@ -32,9 +36,24 @@ export default function Home() {
           >
             <source src="/api/videos" type="video/mp4" />
           </video>
-          <VideoList fileNames={["nature.mkv"]} />
+          <VideoList fileNames={fileNames} />
         </div>
       </main>
     </>
   );
+}
+
+export function getStaticProps() {
+  const fs = require("fs");
+  const fileNames: string[] = [];
+
+  fs.readdirSync("./videos").forEach((file: string) => {
+    fileNames.push(file);
+  });
+
+  return {
+    props: {
+      fileNames,
+    },
+  };
 }
