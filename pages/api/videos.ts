@@ -2,18 +2,7 @@
 import { createReadStream, statSync } from "fs";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  name: string;
-};
-
-type ErrorResponse = {
-  error: string;
-};
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data | ErrorResponse>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
 
   if (method === "GET") {
@@ -24,7 +13,7 @@ export default function handler(
     }
 
     // get video stats (about 61MB)
-    const videoPath = "../../videos/nature.mp4";
+    const videoPath = "./videos/nature.mp4";
     const videoSize = statSync(videoPath).size;
 
     // Parse Range
