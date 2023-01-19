@@ -13,7 +13,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     // get video stats (about 61MB)
-    const videoPath = "./videos/nature.mp4";
+    const videoPath = "./videos/nature.mkv";
     const videoSize = statSync(videoPath).size;
 
     // Parse Range

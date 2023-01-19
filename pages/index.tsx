@@ -1,3 +1,4 @@
+import VideoList from "@/components/VideoList";
 import { Inter } from "@next/font/google";
 import Head from "next/head";
 
@@ -16,6 +17,8 @@ export default function Home() {
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
+            rowGap: "20px",
             alignItems: "center",
             justifyContent: "center",
             minHeight: "100vh",
@@ -24,12 +27,12 @@ export default function Home() {
           <video
             id="videoPlayer"
             controls
-            autoPlay
             width={1920}
             style={{ width: "100%", height: "auto" }}
           >
             <source src="/api/videos" type="video/mp4" />
           </video>
+          <VideoList fileNames={["nature.mkv"]} />
         </div>
       </main>
     </>
