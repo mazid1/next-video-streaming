@@ -15,8 +15,8 @@ export default function getVideos(req: NextApiRequest, res: NextApiResponse) {
     res.status(400).send({ error: "Requires Range header" });
   }
 
-  // get video stats (about 61MB)
-  const videoPath = "./videos/nature.mkv";
+  // get video stats
+  const videoPath = "./videos/nature.mp4";
   const videoSize = statSync(videoPath).size;
 
   // Parse Range
