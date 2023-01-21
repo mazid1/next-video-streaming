@@ -1,4 +1,5 @@
 import VideoList from '@/components/VideoList'
+import VideoPlayer from '@/components/VideoPlayer'
 import { Stack } from '@chakra-ui/react'
 import Head from 'next/head'
 
@@ -17,14 +18,7 @@ export default function Home({ fileNames }: HomeProps) {
       </Head>
       <main>
         <Stack>
-          <video
-            id="videoPlayer"
-            controls
-            width={1920}
-            style={{ width: '100%', height: 'auto' }}
-          >
-            <source src="/api/videos" type="video/mp4" />
-          </video>
+          <VideoPlayer />
           <VideoList fileNames={fileNames} />
         </Stack>
       </main>
