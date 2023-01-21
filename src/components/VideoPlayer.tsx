@@ -1,7 +1,9 @@
-function VideoPlayer() {
+type Props = { id: string }
+
+function VideoPlayer({ id }: Props) {
   return (
-    <video controls>
-      <source src="/api/videos" type="video/mp4" />
+    <video controls autoPlay>
+      <source src={`/api/videos/${id}`} type="video/mp4" />
     </video>
   )
 }

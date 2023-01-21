@@ -1,5 +1,4 @@
 import VideoList from '@/components/VideoList'
-import VideoPlayer from '@/components/VideoPlayer'
 import { Stack } from '@chakra-ui/react'
 import Head from 'next/head'
 
@@ -18,7 +17,6 @@ export default function Home({ fileNames }: HomeProps) {
       </Head>
       <main>
         <Stack>
-          <VideoPlayer />
           <VideoList fileNames={fileNames} />
         </Stack>
       </main>
