@@ -1,14 +1,12 @@
-type VideoListProps = {
-  fileNames: string[];
-};
+import { Box } from '@chakra-ui/react'
 
-function VideoList({ fileNames }: VideoListProps) {
-  const contents = fileNames.map((file) => (
-    <div key={file} style={{ color: "#f2f2f2" }}>
-      {file}
-    </div>
-  ));
-  return <>{contents}</>;
+type VideoListProps = {
+  fileNames: string[]
 }
 
-export default VideoList;
+function VideoList({ fileNames }: VideoListProps) {
+  const contents = fileNames.map((file) => <Box key={file}>{file}</Box>)
+  return <>{contents}</>
+}
+
+export default VideoList

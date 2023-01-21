@@ -1,12 +1,10 @@
-import VideoList from "@/components/VideoList";
-import { Inter } from "@next/font/google";
-import Head from "next/head";
-
-const inter = Inter({ subsets: ["latin"] });
+import VideoList from '@/components/VideoList'
+import { Stack } from '@chakra-ui/react'
+import Head from 'next/head'
 
 type HomeProps = {
-  fileNames: string[];
-};
+  fileNames: string[]
+}
 
 export default function Home({ fileNames }: HomeProps) {
   return (
@@ -18,42 +16,33 @@ export default function Home({ fileNames }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            rowGap: "20px",
-            alignItems: "center",
-            justifyContent: "center",
-            minHeight: "100vh",
-          }}
-        >
+        <Stack>
           <video
             id="videoPlayer"
             controls
             width={1920}
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: '100%', height: 'auto' }}
           >
             <source src="/api/videos" type="video/mp4" />
           </video>
           <VideoList fileNames={fileNames} />
-        </div>
+        </Stack>
       </main>
     </>
-  );
+  )
 }
 
 export function getStaticProps() {
-  const fs = require("fs");
-  const fileNames: string[] = [];
+  const fs = require('fs')
+  const fileNames: string[] = []
 
-  fs.readdirSync("./videos").forEach((file: string) => {
-    fileNames.push(file);
-  });
+  fs.readdirSync('./videos').forEach((file: string) => {
+    fileNames.push(file)
+  })
 
   return {
     props: {
       fileNames,
     },
-  };
+  }
 }
