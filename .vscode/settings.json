@@ -4,5 +4,7 @@
     "source.fixAll": true,
     "source.sortImports": true,
     "source.organizeImports": true
-  }
+  },
+  "prettier.singleQuote": true,
+  "prettier.semi": false
 }
