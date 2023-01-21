@@ -34,7 +34,7 @@ export function getStaticProps() {
 
   return {
     props: {
-      fileNames,
+      fileNames: fileNames.sort(),
     },
   }
 }
