@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+It expects a `videos` directory in the root of the project. Inside that directory you need to put your video files. When you are ready with your `videos` directory you can proceed to the next step.
+
 First, run the development server:
 
 ```bash
