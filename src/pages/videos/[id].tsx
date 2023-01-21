@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 function VideoPlayerPage() {
   const router = useRouter()
   const { id } = router.query as { id: string }
-  console.log({ VideoPlayerPage: id })
+
   return <VideoPlayer id={id} />
 }
 

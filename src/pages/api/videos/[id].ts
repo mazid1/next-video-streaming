@@ -5,7 +5,6 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 export default function getVideos(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
   const { id } = req.query
-  console.log({ API: req.query })
 
   if (method !== 'GET') {
     return res.status(405).json({ error: `Method ${method} not allowed` })
