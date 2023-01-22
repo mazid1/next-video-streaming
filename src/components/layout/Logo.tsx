@@ -8,7 +8,7 @@ function Logo() {
   return (
     <HStack wrap="nowrap">
       <Image src={logo} alt="logo" height={40} />
-      <Heading>Videos</Heading>
+      <Heading>videos</Heading>
     </HStack>
   )
 }
