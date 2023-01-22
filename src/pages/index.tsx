@@ -1,5 +1,5 @@
 import VideoList from '@/components/VideoList'
-import { Stack } from '@chakra-ui/react'
+import { Container, Stack } from '@chakra-ui/react'
 import Head from 'next/head'
 
 type HomeProps = {
@@ -15,9 +15,11 @@ export default function Home({ fileNames }: HomeProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Stack>
-        <VideoList fileNames={fileNames} />
-      </Stack>
+      <Container maxW="6xl" py={4}>
+        <Stack>
+          <VideoList fileNames={fileNames} />
+        </Stack>
+      </Container>
     </>
   )
 }
