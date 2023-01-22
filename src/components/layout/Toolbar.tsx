@@ -1,18 +1,12 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { HStack, IconButton, Link, useColorMode } from '@chakra-ui/react'
+import { HStack, Link } from '@chakra-ui/react'
 import { LinkLogo } from './Logo'
+import ThemeChanger from './ThemeChanger'
 
 function Toolbar() {
-  const { colorMode, toggleColorMode } = useColorMode()
-
   return (
     <HStack>
       <Link href="/" as={LinkLogo} />
-      <IconButton
-        icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        onClick={() => toggleColorMode()}
-        aria-label={'Toggle Dark Mode'}
-      />
+      <ThemeChanger />
     </HStack>
   )
 }
